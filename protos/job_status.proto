@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package jobstatus;
+
+service JobStatus {
+    // Simple RPC.
+    rpc GetStatus(StatusRequest) returns (StatusResponse) {}
+}
+
+message StatusRequest {
+    string bucketname = 1;
+    string job_name = 2;
+    string job_type = 3;
+}
+
+message StatusResponse {
+    string job_status = 1;
+}
